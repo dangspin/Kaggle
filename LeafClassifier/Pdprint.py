@@ -18,7 +18,7 @@ def get_info(Dataframe):
     if not isinstance(Dataframe, pd.core.frame.DataFrame):
         raise Examption("Error Format! The input datatype must be Pandas' DataFrame!!")
 
-    print ("The Dataset has %d columns, and %d observations.", %(Dataframe.shape[1], Dataframe.shape[0]))
+    print ("The Dataset has %s columns, and %s observations." %(Dataframe.shape[1], Dataframe.shape[0]))
     print ("------------------------------------------------")
     print ("\n")
     print ("The features of the DataFrame are: ", Dataframe.columns.values)
@@ -31,6 +31,6 @@ def list_null(Dataframe):
     if not isinstance(Dataframe, pd.core.frame.DataFrame):
         raise Examption("Error Format! The input datatype must be Pandas' DataFrame!!")
 
-    print df.shape[1],' columns:'
+    print (df.shape[1],' columns:')
     for i in df.columns.values:
-        print i,': nan',df[i].isnull().sum(),', ',df[i].dtypes
+        print (i,': nan',df[i].isnull().sum(),', ',df[i].dtypes)
