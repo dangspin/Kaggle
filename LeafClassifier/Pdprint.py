@@ -14,6 +14,18 @@ import pandas as pd
 def get_info(Dataframe):
     """
     This function will generate a basic information of the Dataframe
+
+    Parameters
+    -----------
+    Dataframe: A pandas DataFrame
+
+    Returns
+    -------
+    None
+
+    Print
+    -----
+    information
     """
     if not isinstance(Dataframe, pd.core.frame.DataFrame):
         raise Examption("Error Format! The input datatype must be Pandas' DataFrame!!")
@@ -26,11 +38,23 @@ def get_info(Dataframe):
 
 def list_null(Dataframe):
     """
-    This function will list the null information of the DataFrame
+    This function will list the null information of the DataFrame.
+
+    Parameters
+    ----------
+    Dataframe: A pandas Dataframe
+
+    Returns
+    -------
+    None
+
+    Print
+    -----
+    Information
     """
     if not isinstance(Dataframe, pd.core.frame.DataFrame):
         raise Examption("Error Format! The input datatype must be Pandas' DataFrame!!")
 
-    print (df.shape[1],' columns:')
-    for i in df.columns.values:
-        print (i,': nan',df[i].isnull().sum(),', ',df[i].dtypes)
+    print (Dataframe.shape[1],' columns: ')
+    for i in Dataframe.columns.values:
+        print (i, ": nan", Dataframe[i].isnull().sum(), ', ', Dataframe[i].dtypes)
